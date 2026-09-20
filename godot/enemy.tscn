@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://mfat4bq8sr0i"]
+
+[ext_resource type="Script" uid="uid://b2stmgys11l7b" path="res://enemy.gd" id="1_jmwgi"]
+[ext_resource type="Texture2D" uid="uid://dqbi3w3hdin4n" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 01.png" id="2_g2u8i"]
+[ext_resource type="Texture2D" uid="uid://euxg74phlf6u" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 02.png" id="3_otto8"]
+[ext_resource type="Texture2D" uid="uid://d3ljsyf36uoh0" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 03.png" id="4_8q82m"]
+[ext_resource type="Texture2D" uid="uid://ocyxp1ec117a" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/09-Dead Hit/Dead Hit 04.png" id="5_epc7x"]
+[ext_resource type="Texture2D" uid="uid://b04ecwfyl2850" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 01.png" id="6_o7rgc"]
+[ext_resource type="Texture2D" uid="uid://ci1rm877pntvg" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 02.png" id="7_kdav3"]
+[ext_resource type="Texture2D" uid="uid://dey24fna4j5ha" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 03.png" id="8_jpbtr"]
+[ext_resource type="Texture2D" uid="uid://brunu2pksry5k" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/08-Hit/Hit 04.png" id="9_qgdfx"]
+[ext_resource type="Texture2D" uid="uid://5gpldvxpcj3m" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 01.png" id="10_qku5p"]
+[ext_resource type="Texture2D" uid="uid://t15tqcxh3o3i" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 02.png" id="11_l1fjw"]
+[ext_resource type="Texture2D" uid="uid://dqw4i4j8f2ruu" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 03.png" id="12_b5wqg"]
+[ext_resource type="Texture2D" uid="uid://bk6u6r2j3yvvu" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 04.png" id="13_hgro5"]
+[ext_resource type="Texture2D" uid="uid://bhiqx235nxgnk" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 05.png" id="14_18rq2"]
+[ext_resource type="Texture2D" uid="uid://cb7kp47hfg15" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 06.png" id="15_ccdwq"]
+[ext_resource type="Texture2D" uid="uid://db5ov875qqdc5" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 07.png" id="16_0jgdh"]
+[ext_resource type="Texture2D" uid="uid://ct4jy0pofo6tp" path="res://Treasure Hunters/Treasure Hunters/The Crusty Crew/Sprites/Pink Star/01-Idle/Idle 08.png" id="17_6wg26"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pui1t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_g2u8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_otto8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_8q82m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_epc7x")
+}],
+"loop": 1,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_o7rgc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kdav3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jpbtr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_qgdfx")
+}],
+"loop": 1,
+"name": &"hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_qku5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_l1fjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_b5wqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_hgro5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_18rq2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ccdwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0jgdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6wg26")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pui1t"]
+
+[node name="Area2D" type="Area2D" unique_id=1988614121]
+script = ExtResource("1_jmwgi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=167557095]
+sprite_frames = SubResource("SpriteFrames_pui1t")
+animation = &"dead"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=219093339]
+shape = SubResource("CapsuleShape2D_pui1t")
